@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_ATicket_Book));
             this.txtUsermobile = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtTotalcost = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,6 +51,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // txtUsermobile
@@ -88,7 +92,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel2.Location = new System.Drawing.Point(-2, 525);
+            this.panel2.Location = new System.Drawing.Point(0, 585);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1157, 20);
             this.panel2.TabIndex = 59;
@@ -100,24 +104,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1157, 20);
             this.panel1.TabIndex = 58;
-            // 
-            // txtTotalcost
-            // 
-            this.txtTotalcost.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
-            this.txtTotalcost.Location = new System.Drawing.Point(171, 385);
-            this.txtTotalcost.Name = "txtTotalcost";
-            this.txtTotalcost.Size = new System.Drawing.Size(100, 35);
-            this.txtTotalcost.TabIndex = 57;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
-            this.label9.Location = new System.Drawing.Point(19, 388);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 28);
-            this.label9.TabIndex = 56;
-            this.label9.Text = "Total Cost";
             // 
             // cbGender
             // 
@@ -342,7 +328,6 @@
             this.cbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbSource.FormattingEnabled = true;
             this.cbSource.Items.AddRange(new object[] {
-            "---Select---",
             "Chhatrapati Shivaji International Airport – BOM\tMumbai, Maharashtra",
             "Kempegowda International Airport – BLR\t                   Bangalore, Karnataka",
             "Chennai International Airport – MAA\tChennai, Tamil Nadu",
@@ -374,7 +359,6 @@
             this.cbDestination.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbDestination.FormattingEnabled = true;
             this.cbDestination.Items.AddRange(new object[] {
-            "---Select---",
             "Chhatrapati Shivaji International Airport – BOM\tMumbai, Maharashtra",
             "Kempegowda International Airport – BLR\t                   Bangalore, Karnataka",
             "Chennai International Airport – MAA\tChennai, Tamil Nadu",
@@ -432,11 +416,58 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
+            this.label9.Location = new System.Drawing.Point(13, 388);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(325, 28);
+            this.label9.TabIndex = 72;
+            this.label9.Text = "For Total Cost Please click here";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("MV Boli", 21.75F);
+            this.btnPrint.Location = new System.Drawing.Point(973, 460);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(139, 46);
+            this.btnPrint.TabIndex = 73;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(13, 542);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(451, 25);
+            this.label12.TabIndex = 74;
+            this.label12.Text = "* Before SUBMIT please PRINT the Ticket";
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // User_ATicket_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 548);
+            this.ClientSize = new System.Drawing.Size(1158, 604);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label11);
@@ -447,8 +478,6 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtTotalcost);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
@@ -477,8 +506,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTotalcost;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
@@ -496,5 +523,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Label label12;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

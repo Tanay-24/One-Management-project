@@ -51,5 +51,12 @@ namespace One_Management_project.User
             //User_Goods_or_Travel user_Goods_Or_Travel = new User_Goods_or_Travel();
             //user_Goods_Or_Travel.ShowDialog();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ULogin1 uLogin1 = new ULogin1();
+            uLogin1.ShowDialog();
+        }
     }
 }

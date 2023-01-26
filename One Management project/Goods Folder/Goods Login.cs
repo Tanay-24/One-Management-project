@@ -59,8 +59,8 @@ namespace One_Management_project
 
                     MessageBox.Show("Login Successful!");
                     this.Hide();
-                    GoodsAndTransport goodsAndTransport = new GoodsAndTransport();
-                    goodsAndTransport.ShowDialog();
+                    Home_Page home_Page = new Home_Page();
+                    home_Page.ShowDialog();
 
                 }
                 else

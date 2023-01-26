@@ -186,6 +186,18 @@
     <Compile Include="Goods Folder\GoodsAndTransport.Designer.cs">
       <DependentUpon>GoodsAndTransport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Goods Folder\Home Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goods Folder\Home Page.Designer.cs">
+      <DependentUpon>Home Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Goods Folder\Show Goods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goods Folder\Show Goods.Designer.cs">
+      <DependentUpon>Show Goods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Railway Folder\Home Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +397,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Goods Folder\GoodsAndTransport.resx">
       <DependentUpon>GoodsAndTransport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Goods Folder\Home Page.resx">
+      <DependentUpon>Home Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Goods Folder\Show Goods.resx">
+      <DependentUpon>Show Goods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Railway Folder\Home Page.resx">
       <DependentUpon>Home Page.cs</DependentUpon>
